@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.icon-center {
+  top: 40%;
+  transform: translateY(-25%);
+}
+.header-nav-list {
+  @apply:mr-8 border-b-2;
+}
+.header-nav-list:after {
+  display: block;
+  border: 1px solid #fa8907;
+  content: "" !important;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in;
+}
+.header-nav-list:hover::after {
+  transform: scaleX(1);
+}
