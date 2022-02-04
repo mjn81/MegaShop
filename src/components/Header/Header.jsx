@@ -6,6 +6,15 @@ import {Link} from "react-router-dom";
 const Header = () => {
     const categorytmp = [
         {
+            "id":1,
+            "title":"Category",
+            "route":"/cat",
+            "icon":{
+                "path":"M4 6h16M4 12h16M4 18h16"
+            }
+        
+        },
+        {
             "id":2,
             "title":"Market",
             "route":"/cat"
@@ -50,21 +59,22 @@ const Header = () => {
                     <ul className='flex justify-center lg:justify-start text-gray-600 text-center '>
                         <li key={0} className='header-nav-list '>        
                             <Link className='block py-4 px-3' to="/cat"> 
-                                <FontAwesomeIcon icon={faBars} />
-                                    <span className='pl-1'>
-                                        Category
-                                    </span>
-                                </Link>
+
+                            </Link>
                         </li>
-                        {
-                            categorytmp.map(category=>(
-                                <li key={category.id} className='header-nav-list'>
-                                    <Link className='block px-3 py-4' to={category.route}> 
-                                        {category.title}
-                                    </Link>
-                                </li>
-                            ))
-                        }
+                        {categorytmp.map(item=>(
+                            <li key={item.id} className='header-nav-list'>
+                                <Link className='block px-3 py-4' to={item.route}> 
+                                   {item.icon && <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon.path} />
+                                    </svg>
+                                    }
+                                <span className={item.icon ? 'pl-1' : ''}>
+                                    {item.title}
+                                </span>
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
             </section>
