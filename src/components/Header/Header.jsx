@@ -28,7 +28,6 @@ const Header = () => {
     ];
     return ( 
         <header className='shadow-md'>
-
             <section className='lg:grid lg:grid-cols-8 text-center text-md py-4'>
                 <div className='font-bold col-span-1  text-primary text-4xl lg:text-3xl flex items-center justify-center '>
                     <span>MegaShop</span>
@@ -49,15 +48,14 @@ const Header = () => {
             <section>
                 <nav className='mx-10 my-4 lg:my-0'>
                     <ul className='flex justify-center lg:justify-start text-gray-600 text-center '>
-                         <li key={0} className='header-nav-list '>
-                                    
-                                    <Link className='block py-4 px-3' to="/cat"> 
-                                        <FontAwesomeIcon icon={faBars} />
-                                        <span className='pl-1'>
-                                            Category
-                                        </span>
-                                    </Link>
-                                </li>
+                        <li key={0} className='header-nav-list '>        
+                            <Link className='block py-4 px-3' to="/cat"> 
+                                <FontAwesomeIcon icon={faBars} />
+                                    <span className='pl-1'>
+                                        Category
+                                    </span>
+                                </Link>
+                        </li>
                         {
                             categorytmp.map(category=>(
                                 <li key={category.id} className='header-nav-list'>
