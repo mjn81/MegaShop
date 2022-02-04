@@ -3,16 +3,249 @@ import { faShoppingCart , faBars} from '@fortawesome/free-solid-svg-icons'
 import {Button , ButtonOutline} from '../core';
 import SearchInput from '../core/Input';
 import {Link} from "react-router-dom";
+import SubMenu from './SubMenu';
 const Header = () => {
     const categorytmp = [
         {
             "id":1,
             "title":"Category",
-            "route":"/cat",
+            "route":"cat/",
             "icon":{
                 "path":"M4 6h16M4 12h16M4 18h16"
-            }
-        
+            },
+            "subMenu":[
+                {
+                    "id":1,
+                    "title":"Electronics",
+                    "path":"electronics/",
+                    "subMenu":[
+                        {
+                            "id":1,
+                            "title":"mobile's",
+                            "path":"mobiles/",
+                            "subMenu":[
+                                {
+                                    "id":1,
+                                    "title" : "Hawie",
+                                    "path" :"hwvs/"
+                                },
+                                {
+                                    "id":2,
+                                    "title" : "Samsung",
+                                    "path" :"smsng/"
+                                },
+                            ]
+                        },
+                                        {
+                            "id":2,
+                            "title":"laptop's",
+                            "path":"lapt/",
+                            "subMenu":[
+                                {
+                                    "id":1,
+                                    "title" : "Asus",
+                                    "path" :"asus/"
+                                },
+                                {
+                                    "id":2,
+                                    "title" : "Acer",
+                                    "path" :"acr/"
+                                },
+                            ]
+                        },                {
+                            "id":3,
+                            "title":"pc's",
+                            "path":"pc/",
+                            "subMenu":[
+                                {
+                                    "id":1,
+                                    "title" : "Hawie",
+                                    "path" :"hwvs"
+                                },
+                                {
+                                    "id":2,
+                                    "title" : "Samsung",
+                                    "path" :"smsng"
+                                },
+                            ]
+                        },
+                    ],
+                },
+                {
+                    "id":2,
+                    "title":"Clothing",
+                    "path":"clth/",
+                    "subMenu":[
+                        {
+                            "id":1,
+                            "title":"mobile's",
+                            "path":"mobiles/",
+                            "subMenu":[
+                                {
+                                    "id":1,
+                                    "title" : "Hawie",
+                                    "path" :"hwvs/"
+                                },
+                                {
+                                    "id":2,
+                                    "title" : "Samsung",
+                                    "path" :"smsng/"
+                                },
+                            ]
+                        },
+                                        {
+                            "id":2,
+                            "title":"laptop's",
+                            "path":"lapt/",
+                            "subMenu":[
+                                {
+                                    "id":1,
+                                    "title" : "Asus",
+                                    "path" :"asus/"
+                                },
+                                {
+                                    "id":2,
+                                    "title" : "Acer",
+                                    "path" :"acr/"
+                                },
+                            ]
+                        },                {
+                            "id":3,
+                            "title":"pc's",
+                            "path":"pc/",
+                            "subMenu":[
+                                {
+                                    "id":1,
+                                    "title" : "Hawie",
+                                    "path" :"hwvs"
+                                },
+                                {
+                                    "id":2,
+                                    "title" : "Samsung",
+                                    "path" :"smsng"
+                                },
+                            ]
+                        },
+                    ],
+                },
+                {
+                    "id":3,
+                    "title":"Toys",
+                    "path":"clth/",
+                    "subMenu":[
+                        {
+                            "id":1,
+                            "title":"mobile's",
+                            "path":"mobiles/",
+                            "subMenu":[
+                                {
+                                    "id":1,
+                                    "title" : "Hawie",
+                                    "path" :"hwvs/"
+                                },
+                                {
+                                    "id":2,
+                                    "title" : "Samsung",
+                                    "path" :"smsng/"
+                                },
+                            ]
+                        },
+                                        {
+                            "id":2,
+                            "title":"laptop's",
+                            "path":"lapt/",
+                            "subMenu":[
+                                {
+                                    "id":1,
+                                    "title" : "Asus",
+                                    "path" :"asus/"
+                                },
+                                {
+                                    "id":2,
+                                    "title" : "Acer",
+                                    "path" :"acr/"
+                                },
+                            ]
+                        },                {
+                            "id":3,
+                            "title":"pc's",
+                            "path":"pc/",
+                            "subMenu":[
+                                {
+                                    "id":1,
+                                    "title" : "Hawie",
+                                    "path" :"hwvs"
+                                },
+                                {
+                                    "id":2,
+                                    "title" : "Samsung",
+                                    "path" :"smsng"
+                                },
+                            ]
+                        },
+                    ],
+                },
+                {
+                     "id":4,
+                    "title":"Food & Beverages",
+                    "path":"clth/",
+                    "subMenu":[
+                        {
+                            "id":1,
+                            "title":"mobile's",
+                            "path":"mobiles/",
+                            "subMenu":[
+                                {
+                                    "id":1,
+                                    "title" : "Hawie",
+                                    "path" :"hwvs/"
+                                },
+                                {
+                                    "id":2,
+                                    "title" : "Samsung",
+                                    "path" :"smsng/"
+                                },
+                            ]
+                        },
+                         {
+                            "id":2,
+                            "title":"laptop's",
+                            "path":"lapt/",
+                            "subMenu":[
+                                {
+                                    "id":1,
+                                    "title" : "Asus",
+                                    "path" :"asus/"
+                                },
+                                {
+                                    "id":2,
+                                    "title" : "Acer",
+                                    "path" :"acr/"
+                                },
+                            ]
+                        },                
+                        {
+                            "id":3,
+                            "title":"pc's",
+                            "path":"pc/",
+                            "subMenu":[
+                                {
+                                    "id":1,
+                                    "title" : "Hawie",
+                                    "path" :"hwvs"
+                                },
+                                {
+                                    "id":2,
+                                    "title" : "Samsung",
+                                    "path" :"smsng"
+                                },
+                            ]
+                        },
+                    ],
+
+                },
+                
+            ]
         },
         {
             "id":2,
@@ -57,13 +290,8 @@ const Header = () => {
             <section>
                 <nav className='mx-10 my-4 lg:my-0'>
                     <ul className='flex justify-center lg:justify-start text-gray-600 text-center '>
-                        <li key={0} className='header-nav-list '>        
-                            <Link className='block py-4 px-3' to="/cat"> 
-
-                            </Link>
-                        </li>
                         {categorytmp.map(item=>(
-                            <li key={item.id} className='header-nav-list'>
+                            <li key={item.id} className='header-nav-list relative'>
                                 <Link className='block px-3 py-4' to={item.route}> 
                                    {item.icon && <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon.path} />
@@ -73,6 +301,13 @@ const Header = () => {
                                     {item.title}
                                 </span>
                                 </Link>
+                                {item.subMenu && 
+                                <ul className='absolute rounded-bl-xl bg-white py-2 custom-shadow-left w-max text-left '>
+                                    {item.subMenu.map(subMenu=>(
+                                        <SubMenu item={subMenu} />
+                                    ))}
+                                </ul>
+                                }
                             </li>
                         ))}
                     </ul>
