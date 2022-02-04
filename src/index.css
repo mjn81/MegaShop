@@ -23,5 +23,13 @@
   box-shadow: -4px 6px 10px 2px rgba(0, 0, 0, 0.1);
 }
 .custom-shadow-right {
-  box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.03);
+  box-shadow: 7px 7px 10px 2px rgba(0, 0, 0, 0.1);
+}
+#menu-hover.active {
+  z-index: 20;
+  opacity: 1;
+}
+#menu-hover.deactive {
+  z-index: 0;
+  opacity: 0;
 }
