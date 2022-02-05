@@ -1,6 +1,7 @@
 import MenuItem from "./MenuItem";
 
 const Nav = () => {
+    // temprory data
     const categorytmp = [
         {
             "id":1,
@@ -238,7 +239,7 @@ const Nav = () => {
                             ]
                         },
                             {
-                            "id":3,
+                            "id":4,
                             "title":"pc's",
                             "path":"pc/",
                             "subMenu":[
@@ -254,7 +255,7 @@ const Nav = () => {
                                 },
                             ]
                         },    {
-                            "id":3,
+                            "id":5,
                             "title":"pc's",
                             "path":"pc/",
                             "subMenu":[
@@ -270,7 +271,7 @@ const Nav = () => {
                                 },
                             ]
                         },    {
-                            "id":3,
+                            "id":6,
                             "title":"pc's",
                             "path":"pc/",
                             "subMenu":[
@@ -313,12 +314,14 @@ const Nav = () => {
             "route":"/cat"
         }
     ];
+
+    
     return (
          <section>
                 <nav className='mx-10 my-4 lg:my-0'>
                     <ul className='flex justify-center lg:justify-start text-gray-600 text-center '>
                         {categorytmp.map(item=>(
-                            <MenuItem item={item} />
+                            <MenuItem item={item} key={item.id} />
                         ))}
                     </ul>
                 </nav>

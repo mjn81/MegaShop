@@ -10,7 +10,7 @@ const MenuItem = ({item}) => {
         setIsHovered(false);
     }
     return (  
-        <li key={item.id} className='header-nav-list relative' onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler}>
+        <li className='header-nav-list relative' onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler}>
             <Link className='block px-3 py-4' to={item.route}> 
                 {item.icon && <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-6 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={item.icon.path} />
@@ -21,7 +21,7 @@ const MenuItem = ({item}) => {
             </span>
             </Link>
             {item.subMenu && 
-            <ul className='absolute rounded-bl-xl bg-white py-2 custom-shadow-left w-max text-left ' hidden={!isHovered}>
+            <ul className='absolute rounded-bl-lg bg-white py-2 custom-shadow-left w-max text-left ' hidden={!isHovered}>
                 {item.subMenu.map((subMenu,i)=>(
                     <SubMenu key={subMenu.id} item={subMenu} isActive={i===0 ? true : false} />
                 ))}
