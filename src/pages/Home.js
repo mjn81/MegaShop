@@ -1,7 +1,7 @@
 import Ads from "../components/Ads/Ads";
 import Carousel from "../components/Carousel/Carousel";
 import Header from "../components/Header/Header";
-
+import Offers from "../components/Offers&Limits/Offers";
 const Home = () => {
 
     return (
@@ -16,6 +16,9 @@ const Home = () => {
                 <div className="col-span-1">
                    <Ads />
                 </div>
+            </section>
+            <section className="shadow-lg w-3/4 mx-auto rounded-lg  my-10">
+                <Offers />
             </section>
         </>
     );

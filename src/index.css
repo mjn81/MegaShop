@@ -20,10 +20,10 @@
 }
 
 .custom-shadow-left {
-  box-shadow: -4px 6px 10px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: -2px 8px 10px 2px rgba(0, 0, 0, 0.1);
 }
 .custom-shadow-right {
-  box-shadow: 7px 7px 10px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.1);
 }
 #menu-hover.active {
   z-index: 20;
