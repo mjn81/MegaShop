@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import {Button , ButtonOutline} from '../core';
-import SearchInput from '../core/Input';
+import {SearchInput} from '../core';
 import Nav from './Nav';
 const Header = () => {
     

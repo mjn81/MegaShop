@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons"
-const SearchInput = () => {
+export const SearchInput = () => {
     return (  
         <div className="relative w-full">
             <FontAwesomeIcon icon={faSearch} className="absolute left-5 icon-center z-20 text-xl text-gray-400" />
@@ -10,4 +10,3 @@ const SearchInput = () => {
     );
 }
  
-export default SearchInput;

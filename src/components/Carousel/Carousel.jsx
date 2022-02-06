@@ -31,7 +31,7 @@ const Carousel = () => {
       const tmpCarousel = [
         {
             "id":1,
-            "img":"https://via.placeholder.com/1000x500",
+            "img":"https://via.placeholder.com/1000x800",
             "path":"/adsss",
             "title":"img1",
             "discription":"Hello world",
@@ -59,7 +59,7 @@ const Carousel = () => {
         },
       ];
  
-
+      //TODO: carousel auto movement + improvement + ...
       // TODO: the api functions will go here
 
 
