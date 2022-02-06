@@ -1,6 +1,8 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 export const Card = ({children}) => {
     return (
-        <div className="shadow-sm col-span-1 bg-white rounded-md">
+        <div className="shadow-sm border-2 col-span-1 bg-white rounded-md p-6">
             {children}
         </div>
       );
@@ -9,23 +11,28 @@ export const Card = ({children}) => {
 export const LatestProductCard = ({id , title , price , category , image , rate})=>{
     return(
         <Card key={id}>
-            <div className="p-6 h-96 overflow-hidden border-2 m-6">
+            <div className="h-96 overflow-hidden border-2">
                 <img className="w-full object-cover" src={image} alt={title} />
             </div>
-        <div>
-            {title}
-        </div>
-            <div>
+            <section className="my-3">
+                <div>
+                    {title}
+                </div>
+                <div>
                 <span>
                     {price} 
                 </span>
                 <span>
                     {category}
                 </span>
-            </div>
-            <div>
-                {rate}
-            </div>
+                </div>
+                <div>
+                    {Array(Math.floor(Number(rate))).fill().map(()=>(
+                        <FontAwesomeIcon icon={faStar} />
+                    ))}
+                </div>
+            </section>
+        
         </Card>
     );
 }
