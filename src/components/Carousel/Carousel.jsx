@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft , faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import {  ButtonOutline } from "../core";
+import { useEffect } from "react";
 
 
 
@@ -14,6 +15,9 @@ const carouselFunction = ()=>{
   slides.forEach(setSlidePos);
 }
 const moveToSlide = (track, current , target)=>{
+  if(target==null){
+    return;
+  }
   track.style.transform = 'translateX(-' +target.style.left + ')'; 
   current.classList.remove('active');
   target.classList.add('active');
@@ -25,9 +29,6 @@ const getElements = ()=>{
 }
 
 const Carousel = () => {
-      window.addEventListener('resize' , ()=>{
-        setTimeout(carouselFunction , 200);
-      })
       const tmpCarousel = [
         {
             "id":1,
@@ -78,8 +79,16 @@ const Carousel = () => {
         moveToSlide(track , current , pre);
       }
       
-
-      setTimeout(carouselFunction , 2000);
+      useEffect(()=>{
+        window.addEventListener('resize' , ()=>{
+          setTimeout(carouselFunction , 200);
+        });
+        const refrence = setTimeout(carouselFunction , 2000);
+        return ()=>{
+          clearTimeout(refrence);
+        }
+      },[]);
+     
     return (
       <div className="rounded-lg overflow-hidden m-auto h-full relative">
           <div className="track-carousel transition-transform duration-200 ease-out relative h-full">

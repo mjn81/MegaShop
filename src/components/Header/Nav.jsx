@@ -6,7 +6,7 @@ const Nav = () => {
         {
             "id":1,
             "title":"Category",
-            "route":"cat/",
+            "route":"category/All",
             "icon":{
                 "path":"M4 6h16M4 12h16M4 18h16"
             },
@@ -14,55 +14,55 @@ const Nav = () => {
                 {
                     "id":1,
                     "title":"Electronics",
-                    "path":"electronics/",
+                    "path":"category/electronics/",
                     "subMenu":[
                         {
                             "id":1,
                             "title":"mobile's",
-                            "path":"mobiles/",
+                            "path":"category/mobiles/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Hawie",
-                                    "path" :"hwvs/"
+                                    "path" :"category/hwvs/"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Samsung",
-                                    "path" :"smsng/"
+                                    "path" :"category/smsng/"
                                 },
                             ]
                         },
                                         {
                             "id":2,
                             "title":"laptop's",
-                            "path":"lapt/",
+                            "path":"category/lapt/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Asus",
-                                    "path" :"asus/"
+                                    "path" :"category/asus/"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Acer",
-                                    "path" :"acr/"
+                                    "path" :"category/acr/"
                                 },
                             ]
                         },                {
                             "id":3,
                             "title":"pc's",
-                            "path":"pc/",
+                            "path":"category/pc/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Hawie",
-                                    "path" :"hwvs"
+                                    "path" :"category/hwvs"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Samsung",
-                                    "path" :"smsng"
+                                    "path" :"category/smsng"
                                 },
                             ]
                         },
@@ -70,56 +70,56 @@ const Nav = () => {
                 },
                 {
                     "id":2,
-                    "title":"Clothing",
-                    "path":"clth/",
+                    "title":"Jewelery",
+                    "path":"category/jewelery/",
                     "subMenu":[
                         {
                             "id":1,
                             "title":"mobile's",
-                            "path":"mobiles/",
+                            "path":"category/mobiles/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Hawie",
-                                    "path" :"hwvs/"
+                                    "path" :"category/hwvs/"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Samsung",
-                                    "path" :"smsng/"
+                                    "path" :"category/smsng/"
                                 },
                             ]
                         },
                                         {
                             "id":2,
                             "title":"laptop's",
-                            "path":"lapt/",
+                            "path":"category/lapt/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Asus",
-                                    "path" :"asus/"
+                                    "path" :"category/asus/"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Acer",
-                                    "path" :"acr/"
+                                    "path" :"category/acr/"
                                 },
                             ]
                         },                {
                             "id":3,
                             "title":"pc's",
-                            "path":"pc/",
+                            "path":"category/pc/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Hawie",
-                                    "path" :"hwvs"
+                                    "path" :"category/hwvs"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Samsung",
-                                    "path" :"smsng"
+                                    "path" :"category/smsng"
                                 },
                             ]
                         },
@@ -127,56 +127,56 @@ const Nav = () => {
                 },
                 {
                     "id":3,
-                    "title":"Toys",
-                    "path":"clth/",
+                    "title":"Men's clothing",
+                    "path":"category/men's clothing/",
                     "subMenu":[
                         {
                             "id":1,
                             "title":"mobile's",
-                            "path":"mobiles/",
+                            "path":"category/mobiles/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Hawie",
-                                    "path" :"hwvs/"
+                                    "path" :"category/hwvs/"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Samsung",
-                                    "path" :"smsng/"
+                                    "path" :"category/smsng/"
                                 },
                             ]
                         },
                                         {
                             "id":2,
                             "title":"laptop's",
-                            "path":"lapt/",
+                            "path":"category/lapt/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Asus",
-                                    "path" :"asus/"
+                                    "path" :"category/asus/"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Acer",
-                                    "path" :"acr/"
+                                    "path" :"category/acr/"
                                 },
                             ]
                         },                {
                             "id":3,
                             "title":"pc's",
-                            "path":"pc/",
+                            "path":"category/pc/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Hawie",
-                                    "path" :"hwvs"
+                                    "path" :"category/hwvs"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Samsung",
-                                    "path" :"smsng"
+                                    "path" :"category/smsng"
                                 },
                             ]
                         },
@@ -184,106 +184,106 @@ const Nav = () => {
                 },
                 {
                     "id":4,
-                    "title":"Food & Beverages",
-                    "path":"clth/",
+                    "title":"Women's clothing",
+                    "path":"category/women's clothing/",
                     "subMenu":[
                         {
                             "id":1,
                             "title":"mobile's",
-                            "path":"mobiles/",
+                            "path":"category/mobiles/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Hawie",
-                                    "path" :"hwvs/"
+                                    "path" :"category/hwvs/"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Samsung",
-                                    "path" :"smsng/"
+                                    "path" :"category/smsng/"
                                 },
                             ]
                         },
                          {
                             "id":2,
                             "title":"laptop's",
-                            "path":"lapt/",
+                            "path":"category/lapt/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Asus",
-                                    "path" :"asus/"
+                                    "path" :"category/asus/"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Acer",
-                                    "path" :"acr/"
+                                    "path" :"category/acr/"
                                 },
                             ]
                         },                
                         {
                             "id":3,
                             "title":"pc's",
-                            "path":"pc/",
+                            "path":"category/pc/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Hawie",
-                                    "path" :"hwvs"
+                                    "path" :"category/hwvs"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Samsung",
-                                    "path" :"smsng"
+                                    "path" :"category/smsng"
                                 },
                             ]
                         },
                             {
                             "id":4,
                             "title":"pc's",
-                            "path":"pc/",
+                            "path":"category/pc/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Hawie",
-                                    "path" :"hwvs"
+                                    "path" :"category/hwvs"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Samsung",
-                                    "path" :"smsng"
+                                    "path" :"category/smsng"
                                 },
                             ]
                         },    {
                             "id":5,
                             "title":"pc's",
-                            "path":"pc/",
+                            "path":"category/pc/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Hawie",
-                                    "path" :"hwvs"
+                                    "path" :"category/hwvs"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Samsung",
-                                    "path" :"smsng"
+                                    "path" :"category/smsng"
                                 },
                             ]
                         },    {
                             "id":6,
                             "title":"pc's",
-                            "path":"pc/",
+                            "path":"category/pc/",
                             "subMenu":[
                                 {
                                     "id":1,
                                     "title" : "Hawie",
-                                    "path" :"hwvs"
+                                    "path" :"category/hwvs"
                                 },
                                 {
                                     "id":2,
                                     "title" : "Samsung",
-                                    "path" :"smsng"
+                                    "path" :"category/smsng"
                                 },
                             ]
                         },

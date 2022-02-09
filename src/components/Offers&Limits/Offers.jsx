@@ -1,4 +1,4 @@
-import { useFetchLatest , useFetchPopulars } from "../../hooks";
+import { useFetchLatest , useFetchPopulars } from "../../api";
 import BigCard from "../BigCard/BigCard";
 
 export const Latest = () => {

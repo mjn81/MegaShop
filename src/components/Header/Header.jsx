@@ -3,13 +3,14 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import {Button , ButtonOutline} from '../core';
 import {SearchInput} from '../core';
 import Nav from './Nav';
+import {Link} from "react-router-dom";
 const Header = () => {
     
     return ( 
         <header className='shadow-md'>
             <section className='lg:grid lg:grid-cols-8 text-center text-md py-4'>
                 <div className='font-bold col-span-1  text-primary text-4xl lg:text-3xl flex items-center justify-center '>
-                    <span>MegaShop</span>
+                    <Link to="/">MegaShop</Link>
                 </div>
                 <div className='col-span-6 text-left flex items-center m-4 lg:my-0'>
                     <SearchInput />
