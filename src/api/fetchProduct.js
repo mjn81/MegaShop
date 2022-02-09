@@ -6,7 +6,18 @@ export const useFetchProduct = (limit = null) =>{
 }
 
 export const useFetchCategory = (category, limit) => {
-    const [res , isLoading , error] = useFetch('https://fakestoreapi.com/products' );
+    const [res , isLoading , error] = useFetch('https://fakestoreapi.com/products/category/' + category );
+    const [quantity , setQuantity] = useState(0);
+    const [limitedRes , setLimitedRes] = useState([]);
+    useEffect(()=>{
+        if(!isLoading){
+            console.log(res.length);
+            setQuantity(res.length);
+            const holder = [...res].slice(limit.start , limit.end);
+            setLimitedRes(holder);
+        }
+    } , [isLoading , res , limit ]);
+    return [limitedRes , quantity , isLoading , error];
 }
 
 export const useFetchLatest = (limit=5) =>{

@@ -1,5 +1,5 @@
 import { useFetchLatest , useFetchPopulars } from "../../api";
-import BigCard from "../BigCard/BigCard";
+import BigCard from "../Wrappers/BigCard";
 
 export const Latest = () => {
     const [res , isLoading , error] = useFetchLatest(6);
