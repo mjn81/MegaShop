@@ -16,7 +16,7 @@ const Header = () => {
                     <SearchInput />
                 </div>
                 <div className='col-span-1 flex items-center text-center justify-center'>
-                   <LinkButton path="/Login">
+                   <LinkButton path="/LoginPage">
                         Login
                    </LinkButton>
                     <span className='border-l-2 h-8 mx-4 block border-gray-100'> </span>
