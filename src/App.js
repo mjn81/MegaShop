@@ -2,6 +2,7 @@ import React , {Suspense} from "react";
 import Home from "./pages/Home";
 import {BrowserRouter as Router , Navigate , Route, Routes} from "react-router-dom";
 import UserLayout from "./Layouts/UserLayout";
+import FormLayout from "./Layouts/FormLayout";
 const ProductList = React.lazy(()=>
    import("./pages/ProductList")
 );
@@ -10,6 +11,15 @@ const ProductPage = React.lazy(()=>
 );
 const LoginPage  = React.lazy(()=>
    import("./pages/LoginPage")
+)
+const ForgetPassPage = React.lazy(()=>
+    import("./pages/ForgetPassPage")
+)
+const ResetPassPage = React.lazy(()=>
+    import("./pages/ResetPassPage")
+)
+const RegisterPage = React.lazy(()=>
+    import("./pages/RegisterPage")
 )
 const App = () => {
    return (
@@ -25,7 +35,12 @@ const App = () => {
                     </Route>
                     <Route path="productpage/:id" element={<ProductPage />} />
                 </Route>
-                <Route path="/Login" element={<LoginPage />} />
+                <Route path="/Authentication" element={<FormLayout />}>
+                    <Route path="Login" element={<LoginPage />} />
+                    <Route path="ForgetPass" element={<ForgetPassPage />} />
+                    <Route path="ResetPass" element={<ResetPassPage />} />
+                    <Route path="Register" element={<RegisterPage />} />
+                </Route>
             </Routes>
          </Suspense>
       </Router>

@@ -36,3 +36,6 @@
 .login-background {
   background: linear-gradient(to right bottom, #fa8907, #e1494c, #a12d66, #4f295e, #051937);
 }
+.login-display{
+  width:450px;
+}
