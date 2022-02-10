@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import {Button , ButtonOutline} from '../core';
 import {SearchInput} from '../core';
-import Nav from './Nav';
+import Nav from "./Nav";
 import {Link} from "react-router-dom";
+import {LinkButton, LinkOutLined} from "../core/Link";
 const Header = () => {
     
     return ( 
@@ -16,13 +16,13 @@ const Header = () => {
                     <SearchInput />
                 </div>
                 <div className='col-span-1 flex items-center text-center justify-center'>
-                    <Button>
-                        login
-                    </Button>
-                    <span className='border-l-2 h-8 mx-4 block border-gray-100'></span>
-                   <ButtonOutline>
+                   <LinkButton path="/Login">
+                        Login
+                   </LinkButton>
+                    <span className='border-l-2 h-8 mx-4 block border-gray-100'> </span>
+                   <LinkOutLined path="/Cart">
                          <FontAwesomeIcon icon={faShoppingCart} />
-                   </ButtonOutline>
+                   </LinkOutLined>
                 </div>
             </section>
            <Nav />
