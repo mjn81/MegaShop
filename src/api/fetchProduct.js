@@ -4,14 +4,15 @@ import { useEffect , useState } from "react";
 export const useFetchProduct = (limit = null) =>{
     return useFetch('https://fakestoreapi.com/products' +  (limit ? `?limit=${limit}` : '') );
 }
-
+export const useFetchId = (id) => {
+    return useFetch('https://fakestoreapi.com/products/' + id);
+}
 export const useFetchCategory = (category, limit) => {
     const [res , isLoading , error] = useFetch('https://fakestoreapi.com/products/category/' + category );
     const [quantity , setQuantity] = useState(0);
     const [limitedRes , setLimitedRes] = useState([]);
     useEffect(()=>{
         if(!isLoading){
-            console.log(res.length);
             setQuantity(res.length);
             const holder = [...res].slice(limit.start , limit.end);
             setLimitedRes(holder);

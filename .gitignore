@@ -192,4 +192,10 @@ modules.xml
 .idea/misc.xml
 *.ipr
 
+.idea/inspectionProfiles/Project_Default.xml
+.idea/megashop.iml
+.idea/modules.xml
+.idea/vcs.xml
+
+
 # End of https://www.toptal.com/developers/gitignore/api/webstorm,webstorm+iml

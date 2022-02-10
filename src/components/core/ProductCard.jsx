@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar , faCartPlus , faTags , faBars} from "@fortawesome/free-solid-svg-icons";
+import {faCartPlus , faTags , faBars} from "@fortawesome/free-solid-svg-icons";
 import { Button , Card} from ".";
 import { Link } from "react-router-dom";
+import Rating from "./Rating";
 
 export const ProductCard = ({id , title , price , category , image , rate})=>{
     return(
@@ -25,11 +26,7 @@ export const ProductCard = ({id , title , price , category , image , rate})=>{
                                 <FontAwesomeIcon icon={faBars} />
                                 <span className="m-2">{category}</span>
                             </p>
-                            <div className="text-primary">
-                                {Array(Math.floor(Number(rate))).fill().map((_,index)=>(
-                                    <FontAwesomeIcon icon={faStar} key={index} />
-                                ))}
-                            </div>
+                          <Rating rate={rate} />
                         </section>
                     </Link>
                     <div>
