@@ -1,9 +1,9 @@
-export const Button = ({onSubmit , borderColor , textColor , isFull=false , bgColor=null ,children}) => {
+export const Button = ({onSubmit , borderColor=null , textColor=null , isFull=false , bgColor=null ,children}) => {
     return (
-        <button onClick={onSubmit} className={`block border-2 
-        border-${borderColor ? borderColor : 'gray-300'} cursor-pointer  px-4 py-2 rounded-lg font-bold 
-        text-${textColor ? textColor : 'gray-400'} 
-        ${isFull ? 'w-full' : ''} bg-${bgColor ? bgColor : ''}`}>
+        <button onClick={onSubmit} className={`block border-2 cursor-pointer px-4 py-2 rounded-lg font-bold 
+        ${borderColor ? `border-${borderColor}` : 'border-gray-300'} 
+        ${textColor ? `text-${textColor}` : 'text-gray-400'} 
+        ${isFull ? 'w-full' : ''} ${bgColor ? `bg-${bgColor}`: ''}`}>
             {children}
         </button>
       );
