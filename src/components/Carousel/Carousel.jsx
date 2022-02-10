@@ -83,7 +83,7 @@ const Carousel = () => {
         window.addEventListener('resize' , ()=>{
           setTimeout(carouselFunction , 200);
         });
-        const refrence = setTimeout(carouselFunction , 2000);
+        const refrence = setTimeout(carouselFunction , 700);
         return ()=>{
           clearTimeout(refrence);
         }
