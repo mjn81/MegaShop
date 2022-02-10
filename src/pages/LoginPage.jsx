@@ -1,7 +1,7 @@
 
 const LoginPage = () => {
     return (
-        <main>
+        <main >
 
         </main>
     );

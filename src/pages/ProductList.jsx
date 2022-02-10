@@ -10,12 +10,12 @@ const ProductList = () => {
     const pageNum = Math.ceil(counts/15);
     const active = limit.start/15;
     return ( 
-        <div className="w-3/4 mx-auto my-6 shadow-sm">
+        <main className="w-3/4 mx-auto my-6 shadow-sm">
             <ListCard data={res} isLoading={isLoading} title={category.toUpperCase()} /> 
             <div className="w-fit mx-auto py-8">
                 <Pagination pageNumber={pageNum} category={category} active={active} setLimit={setLimit} />
             </div>
-        </div>
+        </main>
     );
 }
  
