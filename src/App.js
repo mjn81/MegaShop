@@ -4,6 +4,7 @@ import {BrowserRouter as Router , Navigate , Route, Routes} from "react-router-d
 import UserLayout from "./Layouts/UserLayout";
 import FormLayout from "./Layouts/FormLayout";
 import NotFound from "./pages/404";
+import Cart from "./pages/Cart";
 const ProductList = React.lazy(()=>
    import("./pages/ProductList")
 );
@@ -35,6 +36,7 @@ const App = () => {
                         <Route path=":start/:end" element={<ProductList />} />
                     </Route>
                     <Route path="productpage/:id" element={<ProductPage />} />
+                    <Route path="Cart" element={<Cart />} />
                     <Route path="*" element={<NotFound />}/>
                 </Route>
                 <Route path="/Authentication" element={<FormLayout />}>
@@ -44,7 +46,6 @@ const App = () => {
                     <Route path="Register" element={<RegisterPage />} />
                     <Route path="*" element={<NotFound />}/>
                 </Route>
-
             </Routes>
          </Suspense>
       </Router>
