@@ -11,7 +11,7 @@ const LoginPage = () => {
     const setTitle = useOutletContext();
     setTitle("Login");
     return (
-        <>
+        <form>
             <div>
                 <label className="text-lg mb-3 block" htmlFor="username">Username :</label>
                 <Input id="username" placeHolder="username or email" />
@@ -25,13 +25,13 @@ const LoginPage = () => {
                 <div className="mb-6">
                     <CheckBox text="Remember me" onClick={onCheckedHandler} />
                 </div>
-                <Button isFull={true} borderColor="secondary-200"
+                <Button isFull={true} borderColor="primary"
                         textColor="white" bgColor="primary">
                     <p className="py-1">
                         Login
                     </p>
                 </Button>
-                <div className="bg-orange-300 rounded-lg my-3 transition-shadow duration-200 ">
+                <div className="bg-orange-300 rounded-lg my-3">
                     <Link to="/Authentication/Register"
                           className="text-white font-bold text-center">
                         <p className="py-3">register</p>
@@ -46,7 +46,7 @@ const LoginPage = () => {
                     <p className="text-cyan-600">back to home</p>
                 </LinkOutLined>
             </section>
-        </>
+        </form>
     );
 };
 

@@ -1,4 +1,4 @@
-import {Button, Input} from "../components/core";
+import {Button, FormInput, Input} from "../components/core";
 import {useNavigate, useOutletContext} from "react-router-dom";
 import {LinkOutLined} from "../components/core/Link";
 
@@ -9,14 +9,12 @@ const ForgetPassPage = () => {
         navigate("/Authentication/ResetPass" , {replace:true});
     }
     const setTitle = useOutletContext();
-    setTitle("Get SMS Code");
+    setTitle("Get Code");
     return (
-        <>
+        <form>
             <p className="text-center">we will send you a code via sms</p>
-            <div className="mb-6">
-                <label className="text-lg mb-3 block" htmlFor="phoneNum">Mobile :</label>
-                <Input id="phoneNum" placeHolder="enter phone number" />
-            </div>
+            <FormInput name="phoneNumber" haveSpace={true} id="phone"
+                       type="phone" title="Phone Number" placeHolder="enter your phone number" />
             <Button isFull={true} onSubmit={onSubmit} borderColor="secondary-200"
                     textColor="white" bgColor="primary">
                 <p className="py-1">
@@ -28,7 +26,7 @@ const ForgetPassPage = () => {
                     <p className="text-cyan-600">back to Login</p>
                 </LinkOutLined>
             </section>
-        </>
+        </form>
     );
 };
 

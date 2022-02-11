@@ -20,4 +20,12 @@ export const SearchInput = () => {
        
     );
 }
- 
+
+export const FormInput = ({haveSpace=false , title , type="text" , name , id , placeHolder=""}) => {
+    return (
+        <div className={haveSpace ? "mt-6 mb-8" : ""}>
+            <label className="text-lg mb-3 block" htmlFor={id}>{title} :</label>
+            <Input id={id} type={type} name={name} placeHolder={placeHolder} />
+        </div>
+    );
+}
