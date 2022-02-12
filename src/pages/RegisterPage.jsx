@@ -2,6 +2,7 @@ import {Button, FormInput, Input} from "../components/core";
 import {useOutletContext} from "react-router-dom";
 import CheckBox from "../components/core/CheckBox";
 import {LinkOutLined} from "../components/core/Link";
+
 const RegisterPage = () => {
     const onCheckHandler = () => {
         // on checkbox checked
@@ -11,20 +12,20 @@ const RegisterPage = () => {
     return (
         <form>
             <FormInput id="fullName" name="name"
-                       title="FullName" placeHolder="enter your FullName" />
+                       title="FullName" placeHolder="enter your FullName"/>
             <FormInput haveSpace={true} name="email"
                        id="email" type="email" title="Email"
-                       placeHolder="enter your email" />
+                       placeHolder="enter your email"/>
             <FormInput name="username" id="username"
-                       title="Username" placeHolder="choose a username" />
+                       title="Username" placeHolder="choose a username"/>
             <FormInput haveSpace={true} name="password"
-                        id="password" type="password" title="Password"
-                        placeHolder="choose a password" />
+                       id="password" type="password" title="Password"
+                       placeHolder="choose a password"/>
             <div className="mb-6">
-                <CheckBox text="I Agree to terms & policies" onClick={onCheckHandler} />
+                <CheckBox text="I Agree to terms & policies" onClick={onCheckHandler}/>
             </div>
             <section>
-                <Button isFull={true} borderColor="secondary-200"
+                <Button isFull={true} noBorder={true} borderColor="secondary-200"
                         textColor="white" bgColor="primary">
                     <p className="py-1">
                         Register

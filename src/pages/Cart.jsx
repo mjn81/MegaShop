@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCartPlus} from "@fortawesome/free-solid-svg-icons";
 
 const Cart = () => {
+    // TODO: redux implementation
     return (
         <main className="w-3/4 mx-auto my-4 grid grid-cols-3 gap-6">
             <div className="col-span-2">
