@@ -14,7 +14,6 @@ const Cart = () => {
                                 <div className="col-span-1">
                                     <img src="https://via.placeholder.com/1000" alt="lsd"/>
                                 </div>
-
                             </div>
                         </SimpleCard>
                     </div>

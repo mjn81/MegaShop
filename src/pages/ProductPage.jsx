@@ -23,7 +23,11 @@ const ProductPage = () => {
                                 <h4 className="mr-2">Price : </h4><p>${res.price}</p>
                             </div>
                             <div className="my-4">
-                                <AddableInput value={number} setValue={setNumber}/>
+                                <div
+                                    className="mx-auto my-4 flex flex-col 2xl:flex-row justify-between items-center px-2">
+                                    <h4 className="mx-4">Quantity :</h4>
+                                    <AddableInput value={number} setValue={setNumber}/>
+                                </div>
                                 <Button isFull={true} borderColor="primary"
                                         textColor="white" bgColor="primary">
                                     Add to cart

@@ -47,7 +47,7 @@ export const AddableInput = ({value, setValue}) => {
         setValue(value - 1 < 0 ? 0 : value - 1);
     }
     return (
-        <div className="relative overflow-hidden rounded-lg border-2 shadow-md">
+        <div className="relative overflow-hidden rounded-lg border-2">
             <input type="text" onChange={onChange} value={value}
                    className="block w-full text-center outline-2 outline-secondary-100 px-4 py-2"/>
             <button onClick={onMinusHandler} className="absolute h-full top-0.5 -translate-x-0.5 left-4">
