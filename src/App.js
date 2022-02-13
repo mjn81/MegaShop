@@ -1,11 +1,11 @@
 import React, {Suspense} from "react";
-import Home from "./pages/Home";
 import {BrowserRouter as Router, Navigate, Route, Routes} from "react-router-dom";
+
+import Home from "./pages/Home";
 import UserLayout from "./Layouts/UserLayout";
 import FormLayout from "./Layouts/FormLayout";
 import NotFound from "./pages/404";
-import Cart from "./pages/Cart";
-import SearchResPage from "./pages/SearchResPage";
+
 
 const ProductList = React.lazy(() =>
     import("./pages/ProductList")
@@ -25,6 +25,13 @@ const ResetPassPage = React.lazy(() =>
 const RegisterPage = React.lazy(() =>
     import("./pages/RegisterPage")
 )
+const Cart = React.lazy( () =>
+    import("./pages/Cart")
+)
+const SearchResPage = React.lazy( () =>
+    import("./pages/SearchResPage")
+)
+
 const App = () => {
     return (
         <Router>
