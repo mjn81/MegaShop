@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-const initialState = { cart:[] , total:0 }
+const initialState = { cart:[] , total:0 , quantity:0 }
 
 const CartSlice = createSlice({
     name:'cart',
@@ -9,15 +9,18 @@ const CartSlice = createSlice({
         addToCart:(state, action)=>{
             const product = action.payload.prod;
             const q = action.payload.quantity;
+            const price = product.price;
             const fId = state.cart.findIndex(p => p.id === product.id);
             if(fId === -1){
-                state.cart.push(product);
+                state.cart.push({...product , tPrice:q * price});
             }
             else{
                 state.cart[fId].amount+= q;
+                state.cart[fId].tPrice+= q*price;
             }
-            state.total+= q*product.tPrice ;
-            console.log(state.cart); // development mode
+            state.quantity+=q;
+            state.total+= q*price ;
+            console.log(state.cart.length); // development mode
         },
         removeFromCart:(state , action) =>{
             const product = action.payload.prod;
@@ -28,6 +31,7 @@ const CartSlice = createSlice({
             }
             else{
                 if(state.cart[fId].amount > q){
+                    state.quantity-=q;
                     state.cart[fId].amount-=q;
                 }else{
                     const r = state.splice(fId , 1);
