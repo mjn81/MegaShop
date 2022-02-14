@@ -1,21 +1,15 @@
-import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCartPlus} from "@fortawesome/free-solid-svg-icons";
 import {useSelector} from "react-redux";
 
 import {Button, SimpleCard} from "../components/core";
-import {cartActions} from "../redux/CartSlice";
+import {CartItem} from "../components/Cart";
 
 const Cart = () => {
     // TODO: redux implementation
     const cart =  useSelector(state => state.cart.cart);
-    const total = useSelector(state => state.cart.total);
+    const total  = useSelector(state => state.cart.total);
     const quantity = useSelector(state => state.cart.quantity);
-
-
-
-
-
     return (
         <main className="w-3/4 mx-auto my-4 grid grid-cols-3 gap-6">
             <div className="col-span-2">
@@ -23,32 +17,8 @@ const Cart = () => {
                     <div className="pb-3 border-b-2 border-secondary-200">
                         <h1 className="text-3xl">Cart</h1>
                     </div>
-                    {cart.map(product => (
-                        <div className="mt-4">
-                            <SimpleCard>
-                                <div className="grid grid-cols-5 gap-6">
-                                    <Link to={`/productPage/${product.id}`}>
-                                        <img src={product.image} alt={product.title} className="h-36" />
-                                    </Link>
-                                    <div className="col-span-4 flex flex-col justify-between">
-                                        <Link to={`/productPage/${product.id}`} className="w-fit text-xl
-                                    hover:text-secondary-200">{product.title}</Link>
-                                        <p>
-                                            Amount : {product.amount}
-                                        </p>
-                                        <p>
-                                            TotalPrice : {product.tPrice}
-                                        </p>
-                                        <div className="bg-rose-500 rounded-lg">
-                                            <Button isFull={true} noBorder={true} textColor="white">
-                                                Remove Item
-                                            </Button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </SimpleCard>
-                        </div>
+                    {cart.map((product, index) => (
+                        <CartItem product={product} key={index} />
                     ))}
                 </SimpleCard>
             </div>

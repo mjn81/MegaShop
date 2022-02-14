@@ -1,16 +1,27 @@
 import {useParams} from "react-router-dom";
-import {useFetchId} from "../api";
 import {faBars, faWarehouse} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import Rating from "../components/core/Rating";
 import {faStar} from "@fortawesome/free-regular-svg-icons";
-import {AddableInput, Button} from "../components/core";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useState} from "react";
+import {useDispatch} from "react-redux";
+
+import {useFetchId} from "../api";
+import Rating from "../components/core/Rating";
+import {AddableInput, Button} from "../components/core";
+import {cartActions} from "../redux/CartSlice";
 
 const ProductPage = () => {
     const {id} = useParams();
     const [res, isLoading, error] = useFetchId(id);
-    const [number, setNumber] = useState(0);
+    const [number, setNumber] = useState(1);
+    const dispatch = useDispatch();
+
+    const onAddClickHandler = () => {
+        //TODO : writing hooks for add and delete
+        dispatch(cartActions.addToCart({ prod:{...res , amount:number},
+            quantity:number}))
+    }
+
     const quantity = 100;
     return (
         <article className="w-3/4 mx-auto my-6 shadow-sm rounded-xl px-4">
@@ -29,7 +40,7 @@ const ProductPage = () => {
                                     <AddableInput value={number} setValue={setNumber}/>
                                 </div>
                                 <Button isFull={true} borderColor="primary"
-                                        textColor="white" bgColor="primary">
+                                        textColor="white" bgColor="primary" onSubmit={onAddClickHandler}>
                                     Add to cart
                                 </Button>
                             </div>

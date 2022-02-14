@@ -1,5 +1,8 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMinus, faPlus, faSearch} from "@fortawesome/free-solid-svg-icons";
+import {useDispatch} from "react-redux";
+
+import {cartActions} from "../../redux/CartSlice";
 
 export const Input = ({type = "text", placeHolder, id = null, name = null}) => {
     return (
@@ -33,18 +36,18 @@ export const FormInput = ({haveSpace = false, title, type = "text", name, id, pl
 
 export const AddableInput = ({value, setValue}) => {
     const onPlusHandler = () => {
-        setValue(value + 1);
+        setValue(() => value + 1);
     }
     const onChange = e => {
         const v = e.currentTarget.value;
         if (v === "")
-            setValue(0);
+            setValue(1);
         if (!+v)
             return
-        setValue(+v);
+        setValue(() => +v);
     }
     const onMinusHandler = () => {
-        setValue(value - 1 < 0 ? 0 : value - 1);
+        setValue(() => value - 1 < 1 ? 1 : value - 1);
     }
     return (
         <div className="relative overflow-hidden rounded-lg border-2">
@@ -59,3 +62,30 @@ export const AddableInput = ({value, setValue}) => {
         </div>
     );
 }
+
+
+
+export const ReduxAddableInput = ({product}) => {
+    const dispatch = useDispatch();
+
+    const onPlusHandler = () => {
+        dispatch(cartActions.addToCart({ prod:product , quantity:1}))
+    }
+
+    const onMinusHandler = () => {
+        dispatch(cartActions.removeFromCart({prodId:product.id , quantity:1}))
+    }
+    return (
+        <div className="relative overflow-hidden rounded-lg border-2">
+            <input type="text" readOnly={true} value={product.amount}
+                   className="block w-full text-center outline-2 outline-secondary-100 px-4 py-2"/>
+            <button onClick={onMinusHandler} className="absolute h-full top-0.5 -translate-x-0.5 left-4">
+                <FontAwesomeIcon
+                    icon={faMinus}/>
+            </button>
+            <button onClick={onPlusHandler} className="absolute h-full top-0.5 -translate-x-0.5  right-4">
+                <FontAwesomeIcon icon={faPlus}/></button>
+        </div>
+    );
+}
+
