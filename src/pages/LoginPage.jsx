@@ -1,15 +1,29 @@
 import {Button, Input} from "../components/core";
 import {LinkOutLined} from "../components/core/Link";
 import CheckBox from "../components/core/CheckBox";
-import {useOutletContext} from "react-router-dom";
+import {authActions} from "../redux/AutheSlice";
+
+import {useNavigate, useOutletContext} from "react-router-dom";
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
 
 const LoginPage = () => {
-    const onCheckedHandler = ()=>{
+    const dispatch = useDispatch();
+    const navigator = useNavigate()
+    const onCheckedHandler = () => {
         // handling checkbox
     }
+    const onLoginHandler = () => {
+        //  TODO: handle token fetching
+        dispatch(authActions.logIn({token:'lkmvfldkmvkdfmv'}));
+        navigator('/home', {replace:true});
+    }
+
     const setTitle = useOutletContext();
     setTitle("Login");
+
+
+
     return (
         <form>
             <div>
@@ -26,7 +40,7 @@ const LoginPage = () => {
                     <CheckBox text="Remember me" onClick={onCheckedHandler} />
                 </div>
                 <Button isFull={true} borderColor="primary"
-                        textColor="white" bgColor="primary">
+                        textColor="white" bgColor="primary" onSubmit={onLoginHandler}>
                     <p className="py-1">
                         Login
                     </p>
