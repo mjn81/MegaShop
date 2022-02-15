@@ -1,4 +1,4 @@
-import {Button, FormInput, Input} from "../components/core";
+import {Button, FormInput} from "../components/core";
 import {useOutletContext} from "react-router-dom";
 import CheckBox from "../components/core/CheckBox";
 import {LinkOutLined} from "../components/core/Link";

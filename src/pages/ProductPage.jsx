@@ -3,7 +3,7 @@ import {faBars, faWarehouse} from "@fortawesome/free-solid-svg-icons";
 import {faStar} from "@fortawesome/free-regular-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {useState} from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 import {useFetchId} from "../api";
 import Rating from "../components/core/Rating";
@@ -15,11 +15,17 @@ const ProductPage = () => {
     const [res, isLoading, error] = useFetchId(id);
     const [number, setNumber] = useState(1);
     const dispatch = useDispatch();
-
+    const logState = useSelector(state => state.auth.loggedIn);
     const onAddClickHandler = () => {
-        //TODO : writing hooks for add and delete
-        dispatch(cartActions.addToCart({ prod:{...res , amount:number},
-            quantity:number}))
+        //TODO : writing hooks for add and delete (optional)
+        if (logState) {
+            dispatch(cartActions.addToCart({
+                prod: {...res, amount: number},
+                quantity: number
+            }))
+        } else {
+            // TODO: warning card show
+        }
     }
 
     const quantity = 100;

@@ -15,29 +15,28 @@ const LoginPage = () => {
     }
     const onLoginHandler = () => {
         //  TODO: handle token fetching
-        dispatch(authActions.logIn({token:'lkmvfldkmvkdfmv'}));
-        navigator('/home', {replace:true});
+        dispatch(authActions.login({token: 'lkmvfldkmvkdfmv'}));
+        navigator('/home', {replace: true});
     }
 
     const setTitle = useOutletContext();
     setTitle("Login");
 
 
-
     return (
         <form>
             <div>
                 <label className="text-lg mb-3 block" htmlFor="username">Username :</label>
-                <Input id="username" placeHolder="username or email" />
+                <Input id="username" placeHolder="username or email"/>
             </div>
             <div className="mt-6 mb-8">
                 <label className="text-lg mb-3 block" htmlFor="pass">Password :</label>
-                <Input id="pass" type="password" placeHolder="password" />
+                <Input id="pass" type="password" placeHolder="password"/>
             </div>
 
             <section>
                 <div className="mb-6">
-                    <CheckBox text="Remember me" onClick={onCheckedHandler} />
+                    <CheckBox text="Remember me" onClick={onCheckedHandler}/>
                 </div>
                 <Button isFull={true} borderColor="primary"
                         textColor="white" bgColor="primary" onSubmit={onLoginHandler}>

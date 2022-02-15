@@ -4,7 +4,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {useRef} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import {Button, SearchInput} from '../core';
+import {Button, ButtonOutline, SearchInput} from '../core';
 import Nav from "./Nav";
 import {LinkButton, LinkOutLined} from "../core/Link";
 import {authActions} from "../../redux/AutheSlice";
@@ -18,8 +18,8 @@ const Header = () => {
 
     const dispatch = useDispatch();
 
-    const onLogoutHandler = () =>{
-        dispatch(authActions.logOut());
+    const onLogoutHandler = () => {
+        dispatch(authActions.logout());
     }
 
 
@@ -39,34 +39,36 @@ const Header = () => {
                       className='col-span-6 text-left flex items-center m-4 lg:my-0'>
                     <SearchInput reference={searchRef}/>
                 </form>
-                <div className='col-span-1 text-center'>
-                    {!logState&&(<LinkButton path="/Authentication/Login">
+                {!logState && (
+                    <div className="flex items-center justify-center">
+                        <LinkButton path="/Authentication/Login">
                             Login
                         </LinkButton>
-                    )}
-                    {logState&&(
-                        <div className="flex justify-center items-center">
-                            <div>
-                                <Link to="/profile" className="hover:text-primary hover:underline">
-                                    {/* adding username to this part */}
-                                    profile
-                                </Link>
-                                <Button onSubmit={onLogoutHandler}>
-                                    Logout
-                                </Button>
-                            </div>
-                            <span className='border-l-2 h-8 mx-4 block border-gray-100'> </span>
-                            <LinkOutLined path="/Cart">
-                                <div className="relative">
-                                    <FontAwesomeIcon icon={faShoppingCart} />
-                                    <div className="absolute top-3 left-2 text-white bg-primary w-4 h-4 text-xs rounded-xl">
-                                        {quantity}
-                                    </div>
-                                </div>
-                            </LinkOutLined>
+                    </div>
+                )}
+                {logState && (
+                    <div className="flex justify-center items-center">
+                        <div className="text-gray-600 font-light">
+                            <Link to="/profile" className="mr-2 hover:text-primary hover:underline">
+                                {/* adding username to this part */}
+                                Profile
+                            </Link>
                         </div>
-                    )}
-                </div>
+                        <ButtonOutline onSubmit={onLogoutHandler}>
+                            Logout
+                        </ButtonOutline>
+                        <span className='border-l-2 h-8 mx-4 block border-gray-100'> </span>
+                        <LinkOutLined path="/Cart">
+                            <div className="relative">
+                                <FontAwesomeIcon icon={faShoppingCart}/>
+                                <div
+                                    className="absolute top-3 left-2 text-white bg-primary w-4 h-4 text-xs rounded-xl">
+                                    {quantity}
+                                </div>
+                            </div>
+                        </LinkOutLined>
+                    </div>
+                )}
             </section>
             <Nav/>
         </header>

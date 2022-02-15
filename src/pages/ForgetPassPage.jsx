@@ -1,4 +1,4 @@
-import {Button, FormInput, Input} from "../components/core";
+import {Button, FormInput} from "../components/core";
 import {useNavigate, useOutletContext} from "react-router-dom";
 import {LinkOutLined} from "../components/core/Link";
 
@@ -6,7 +6,7 @@ const ForgetPassPage = () => {
     const navigate = useNavigate();
     const onSubmit = () => {
         console.log("token is gotten");
-        navigate("/Authentication/ResetPass" , {replace:true});
+        navigate("/Authentication/ResetPass", {replace: true});
     }
     const setTitle = useOutletContext();
     setTitle("Get Code");
@@ -14,7 +14,7 @@ const ForgetPassPage = () => {
         <form>
             <p className="text-center">we will send you a code via sms</p>
             <FormInput name="phoneNumber" haveSpace={true} id="phone"
-                       type="phone" title="Phone Number" placeHolder="enter your phone number" />
+                       type="phone" title="Phone Number" placeHolder="enter your phone number"/>
             <Button isFull={true} onSubmit={onSubmit} borderColor="secondary-200"
                     textColor="white" bgColor="primary">
                 <p className="py-1">

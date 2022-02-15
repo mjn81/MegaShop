@@ -1,15 +1,22 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCartPlus} from "@fortawesome/free-solid-svg-icons";
 import {useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
 import {Button, SimpleCard} from "../components/core";
 import {CartItem} from "../components/Cart";
 
 const Cart = () => {
     // TODO: redux implementation
-    const cart =  useSelector(state => state.cart.cart);
-    const total  = useSelector(state => state.cart.total);
+    const cart = useSelector(state => state.cart.cart);
+    const total = useSelector(state => state.cart.total);
     const quantity = useSelector(state => state.cart.quantity);
+    const logState = useSelector(state => state.auth.loggedIn);
+    const navigator = useNavigate();
+
+    if (!logState) {
+        navigator('/Authentication/Login', {replace: true});
+    }
     return (
         <main className="w-3/4 mx-auto my-4 grid grid-cols-3 gap-6">
             <div className="col-span-2">
@@ -18,7 +25,7 @@ const Cart = () => {
                         <h1 className="text-3xl">Cart</h1>
                     </div>
                     {cart.map((product, index) => (
-                        <CartItem product={product} key={index} />
+                        <CartItem product={product} key={index}/>
                     ))}
                 </SimpleCard>
             </div>
@@ -28,7 +35,7 @@ const Cart = () => {
                         <h3 className="text-3xl">Info</h3>
                     </div>
                     <section className="mt-4 text-lg font-light grid gap-3">
-                        <p>Total Amount : ${Math.round(100*total)/100}</p>
+                        <p>Total Amount : ${Math.round(100 * total) / 100}</p>
                         <p>Total Quantity : {quantity}</p>
                         <p>Shipment to : Africa</p>
                         <p>Arrival Time Estimation : 20d</p>
