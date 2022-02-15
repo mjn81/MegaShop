@@ -1,22 +1,32 @@
-import {Button, Input} from "../components/core";
+import {Button, FormInput} from "../components/core";
 import {LinkOutLined} from "../components/core/Link";
 import CheckBox from "../components/core/CheckBox";
-import {authActions} from "../redux/AutheSlice";
+import { login } from "../api";
 
 import {useNavigate, useOutletContext} from "react-router-dom";
 import {Link} from "react-router-dom";
-import {useDispatch} from "react-redux";
+import { useRef } from "react";
+import { useSelector } from "react-redux";
 
 const LoginPage = () => {
-    const dispatch = useDispatch();
     const navigator = useNavigate()
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    const logState = useSelector(state => state.auth.loggedIn);
     const onCheckedHandler = () => {
         // handling checkbox
     }
-    const onLoginHandler = () => {
-        //  TODO: handle token fetching
-        dispatch(authActions.login({token: 'lkmvfldkmvkdfmv'}));
-        navigator('/home', {replace: true});
+
+
+
+    const onLoginHandler = (e) => {
+        e.preventDefault();
+      
+        login(emailRef.current.value , passwordRef.current.value).then(()=>{      
+            if(logState){
+                navigator('/home', {replace: true});
+            }
+        });
     }
 
     const setTitle = useOutletContext();
@@ -25,15 +35,11 @@ const LoginPage = () => {
 
     return (
         <form>
-            <div>
-                <label className="text-lg mb-3 block" htmlFor="username">Username :</label>
-                <Input id="username" placeHolder="username or email"/>
-            </div>
-            <div className="mt-6 mb-8">
-                <label className="text-lg mb-3 block" htmlFor="pass">Password :</label>
-                <Input id="pass" type="password" placeHolder="password"/>
-            </div>
-
+            <FormInput name="email" id="email" reference={emailRef}
+                       title="Email" placeHolder="enter your email"/>
+            <FormInput haveSpace={true} name="password" reference={passwordRef}
+                       id="password" type="password" title="Password"
+                       placeHolder="enter password"/>
             <section>
                 <div className="mb-6">
                     <CheckBox text="Remember me" onClick={onCheckedHandler}/>

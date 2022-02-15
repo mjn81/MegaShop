@@ -13,6 +13,7 @@
 
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -191,7 +192,7 @@ fabric.properties
 modules.xml
 .idea/misc.xml
 *.ipr
-
+.idea
 .idea/inspectionProfiles/Project_Default.xml
 .idea/megashop.iml
 .idea/modules.xml

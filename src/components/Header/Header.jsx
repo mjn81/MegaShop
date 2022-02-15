@@ -4,14 +4,16 @@ import {Link, useNavigate} from "react-router-dom";
 import {useRef} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import {Button, ButtonOutline, SearchInput} from '../core';
+import {ButtonOutline, SearchInput} from '../core';
 import Nav from "./Nav";
 import {LinkButton, LinkOutLined} from "../core/Link";
 import {authActions} from "../../redux/AutheSlice";
+import { logout, useFetchUser } from '../../api';
 
 const Header = () => {
     const searchRef = useRef();
     const navigator = useNavigate();
+    useFetchUser();
 
     const logState = useSelector(state => state.auth.loggedIn);
     const quantity = useSelector(state => state.cart.quantity);
@@ -19,7 +21,9 @@ const Header = () => {
     const dispatch = useDispatch();
 
     const onLogoutHandler = () => {
-        dispatch(authActions.logout());
+        logout().then(()=>{
+            dispatch(authActions.logout());
+        });
     }
 
 

@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 // TODO: implementation of status for further development
-const initialState = {loggedIn: false, token: ''}
+const initialState = {loggedIn: false, email:'' , password:''}
 
 const AuthSlice = createSlice({
     name: 'auth',
@@ -9,13 +9,13 @@ const AuthSlice = createSlice({
     reducers: {
         login: (state, action) => {
             state.loggedIn = true;
-            state.token = action.payload.token;
-            // TODO: firebase implementation
+            state.email = action.payload.email;
+            state.password = action.payload.password;
         },
         logout: (state) => {
             state.loggedIn = false;
-            state.token = '';
-            // TODO: firebase implementation
+            state.email = '';
+            state.password = '';
         }
     }
 })

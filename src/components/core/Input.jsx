@@ -4,9 +4,9 @@ import {useDispatch} from "react-redux";
 
 import {cartActions} from "../../redux/CartSlice";
 
-export const Input = ({type = "text", placeHolder, id = null, name = null}) => {
+export const Input = ({type = "text", placeHolder, id = null, name = null , reference}) => {
     return (
-        <input type={type} id={id ? id : ""} name={name ? name : ""}
+        <input ref={reference} type={type} id={id ? id : ""} name={name ? name : ""}
                className='block bg-gray-100 py-4 px-6 w-full rounded-xl
                text-lg focus:drop-shadow-md focus:outline-none text-gray-600 focus:bg-white'
                placeholder={placeHolder}/>
@@ -25,11 +25,11 @@ export const SearchInput = ({reference}) => {
     );
 }
 
-export const FormInput = ({haveSpace = false, title, type = "text", name, id, placeHolder = ""}) => {
+export const FormInput = ({haveSpace = false, title, reference , type = "text", name, id, placeHolder = ""}) => {
     return (
         <div className={haveSpace ? "mt-6 mb-8" : ""}>
             <label className="text-lg mb-3 block" htmlFor={id}>{title} :</label>
-            <Input id={id} type={type} name={name} placeHolder={placeHolder}/>
+            <Input id={id} type={type} name={name} placeHolder={placeHolder} reference={reference} />
         </div>
     );
 }
